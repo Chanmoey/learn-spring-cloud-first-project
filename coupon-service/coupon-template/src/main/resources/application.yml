@@ -1,0 +1,61 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /coupon-template
+
+spring:
+  application:
+    name: eureka-client-coupon-template
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    open-in-view: false
+  datasource:
+    # 数据源
+    url: jdbc://mysql://127.0.0.1:3306/coupon_data?autoReconnect=true&userUnicode=true&characterEncoding=utf7&&userSSL=false
+    username: root
+    password: 12345678
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 连接池
+    hikari:
+      maximum-pool-size: 8
+      minimum-idle: 4
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 45000
+      auto-commit: true
+      pool-name: CouponHikariCP
+  redis:
+    database: 0
+    host: 192.168.40.10
+    port: 6379
+    timeout: 10000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+# 监控端点的配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: coupon-template
+    groupId: coupon-service
+    artifactId: coupon-template
+    version: 1.0-SNAPSHOT
+
+# 日志
+logging:
+  level:
+    com.moon.coupon: debug
