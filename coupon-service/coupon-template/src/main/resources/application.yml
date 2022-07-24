@@ -17,7 +17,7 @@ spring:
     open-in-view: false
   datasource:
     # 数据源
-    url: jdbc://mysql://127.0.0.1:3306/coupon_data?autoReconnect=true&userUnicode=true&characterEncoding=utf7&&userSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/coupon_data?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: 12345678
     type: com.zaxxer.hikari.HikariDataSource
