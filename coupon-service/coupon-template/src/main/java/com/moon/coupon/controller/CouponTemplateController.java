@@ -36,6 +36,9 @@ public class CouponTemplateController {
     /**
      * 构建优惠券模板
      * localhost:7001/coupon-template/template/build
+     * localhost:9000/moon/coupon-template/template/build
+     * localhost:9000/moon 是访问网关
+     * /coupon-template 优惠券微服务统一前缀
      */
     @PostMapping("/template/build")
     public CouponTemplate buildTemplate(@RequestBody TemplateRequest request) throws CouponException {
@@ -46,6 +49,7 @@ public class CouponTemplateController {
     /**
      * 查询优惠券模板
      * localhost:7001/coupon-template/template/info
+     * localhost:9000/moon/coupon-template/template/info
      */
     @GetMapping("/template/info")
     public CouponTemplate buildTemplateInfo(@RequestParam("id") Integer id) throws CouponException {
@@ -56,6 +60,7 @@ public class CouponTemplateController {
     /**
      * 查询所有可用的优惠券模板
      * localhost:7001/coupon-template/template/sdk/all
+     * localhost:9000/moon/coupon-template/template/sdk/all
      */
     @GetMapping("/template/sdk/all")
     public List<CouponTemplateSDK> findAllUsableTemplate() {
@@ -65,7 +70,8 @@ public class CouponTemplateController {
 
     /**
      * 根据 ids 查询所有的 CouponTemplateSDK
-     * localhost:7001/coupon-template/template/sdk/all
+     * localhost:7001/coupon-template/template/sdk/infos
+     * localhost:9000/moon/coupon-template/template/sdk/infos
      */
     @GetMapping("/template/sdk/infos")
     public Map<Integer, CouponTemplateSDK> findIds2TemplateSDK(@RequestParam("ids") Collection<Integer> ids) {

@@ -9,3 +9,19 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8000/eureka/
+
+zuul:
+  prefix: /moon
+  routes:
+    # 优惠券模板微服务路由配置
+    template:
+      path: /coupon-template/**
+      service-id: eureka-client-coupon-template
+      strip-prefix: false # 是否跳过前缀
+  host:
+    connect-timeout-millis: 15000
+    socket-timeout-millis: 60000
+
+ribbon:
+  ConnectTimeout:15000
+  ReadTimeout: 15000
