@@ -36,6 +36,12 @@ public class SettlementInfo {
     private Double cost;
 
     /**
+     * 是否使结算生效，即核销。
+     * 因为要通过这个类的信息进行核销，同时返回核销后的结果，需要一个字段进行标记是否以及核销过。
+     */
+    private Boolean employ;
+
+    /**
      * 优惠券和模板信息
      */
     @Data
