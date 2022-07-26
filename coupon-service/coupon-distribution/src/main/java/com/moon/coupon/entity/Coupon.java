@@ -1,7 +1,7 @@
 package com.moon.coupon.entity;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.moon.coupon.constan.CouponStatus;
+import com.moon.coupon.constant.CouponStatus;
 import com.moon.coupon.converter.CouponStatusConverter;
 import com.moon.coupon.serialization.CouponSerialize;
 import com.moon.coupon.vo.CouponTemplateSDK;

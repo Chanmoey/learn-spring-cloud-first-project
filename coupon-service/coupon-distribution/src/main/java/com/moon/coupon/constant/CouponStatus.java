@@ -1,10 +1,8 @@
-package com.moon.coupon.constan;
+package com.moon.coupon.constant;
 
-import com.moon.coupon.exception.CouponException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.Stream;
 

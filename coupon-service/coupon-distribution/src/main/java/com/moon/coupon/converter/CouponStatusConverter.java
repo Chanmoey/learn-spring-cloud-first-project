@@ -1,6 +1,6 @@
 package com.moon.coupon.converter;
 
-import com.moon.coupon.constan.CouponStatus;
+import com.moon.coupon.constant.CouponStatus;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
