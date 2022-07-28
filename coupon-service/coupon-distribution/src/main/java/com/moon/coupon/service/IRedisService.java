@@ -20,7 +20,7 @@ public interface IRedisService {
      * @param status 优惠券状态 {@link com.moon.coupon.constant.CouponStatus}
      * @return {@link Coupon}s 可能返回 null，代表从没有过记录
      */
-    List<Coupon> getCacheCoupon(Long userId, Integer status);
+    List<Coupon> getCachedCoupons(Long userId, Integer status);
 
     /**
      * 保存空的优惠券列表到缓存中，避免缓存穿透

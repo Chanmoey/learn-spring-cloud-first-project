@@ -47,7 +47,7 @@ public class RedisServiceImpl implements IRedisService {
      */
     @Override
     @SuppressWarnings("all")
-    public List<Coupon> getCacheCoupon(Long userId, Integer status) {
+    public List<Coupon> getCachedCoupons(Long userId, Integer status) {
         log.info("Get coupons From Cache: {}, {}", userId, status);
         String redisKey = status2RedisKey(status, userId);
         List<String> couponStrings = redisTemplate.opsForHash().values(redisKey)
@@ -227,7 +227,7 @@ public class RedisServiceImpl implements IRedisService {
         String redisKeyForUsed = status2RedisKey(CouponStatus.USED.getCode(), userId);
 
         // 获取当前用户可用的优惠券
-        List<Coupon> curUsableCoupons = getCacheCoupon(userId, CouponStatus.USABLE.getCode());
+        List<Coupon> curUsableCoupons = getCachedCoupons(userId, CouponStatus.USABLE.getCode());
         // 当前可用的优惠券个数一定大于1（因为至少有一个无效的优惠券信息）
         assert curUsableCoupons.size() > coupons.size();
 
@@ -288,7 +288,7 @@ public class RedisServiceImpl implements IRedisService {
         String redisKeyForUsable = status2RedisKey(CouponStatus.USABLE.getCode(), userId);
 
         // 用户当前可用的优惠券
-        List<Coupon> curUsableCoupons = getCacheCoupon(userId, CouponStatus.USABLE.getCode());
+        List<Coupon> curUsableCoupons = getCachedCoupons(userId, CouponStatus.USABLE.getCode());
         assert curUsableCoupons.size() > coupons.size();
 
         coupons.forEach(c -> needCacheForExpired.put(
