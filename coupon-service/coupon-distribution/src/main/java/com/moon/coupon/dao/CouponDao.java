@@ -10,7 +10,7 @@ import java.util.List;
  * @author Chanmoey
  * @date 2022年07月26日
  */
-public interface CouponDao extends JpaRepository<CouponDao, Integer> {
+public interface CouponDao extends JpaRepository<Coupon, Integer> {
 
     /**
      * 根据 userId + 状态 查找优惠券记录
