@@ -47,7 +47,7 @@ public class SettlementInfo {
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    private static class CouponAndTemplateInfo {
+    public static class CouponAndTemplateInfo {
 
         /**
          * Coupon id
