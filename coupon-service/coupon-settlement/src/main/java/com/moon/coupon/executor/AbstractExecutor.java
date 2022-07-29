@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  */
 public abstract class AbstractExecutor {
 
-    private static final double MIN_PAY_MONEY = 0.1;
+    private static final double MIN_PAY_MONEY = 0.01;
 
     /**
      * 校验商品类型与优惠券是否匹配
@@ -45,8 +45,9 @@ public abstract class AbstractExecutor {
 
     /**
      * 处理商品类型与优惠券限制不匹配的情况
+     *
      * @param settlement {@link SettlementInfo} 用户传递的结算信息
-     * @param goodsSum 商品总价（原始）
+     * @param goodsSum   商品总价（原始）
      * @return {@link SettlementInfo} 已经修改过的结算信息
      */
     protected SettlementInfo processGoodsTypeNotSatisfy(SettlementInfo settlement, double goodsSum) {
@@ -81,7 +82,7 @@ public abstract class AbstractExecutor {
     /**
      * 最小支付费用
      */
-    private double minCost() {
+    protected double minCost() {
         return MIN_PAY_MONEY;
     }
 }
