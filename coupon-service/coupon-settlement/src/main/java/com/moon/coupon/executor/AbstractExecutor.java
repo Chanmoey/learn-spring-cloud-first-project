@@ -51,6 +51,7 @@ public abstract class AbstractExecutor {
      * @return {@link SettlementInfo} 已经修改过的结算信息
      */
     protected SettlementInfo processGoodsTypeNotSatisfy(SettlementInfo settlement, double goodsSum) {
+        // isGoodsTypeSatisfy 如果子类重载了，则调用子类的
         boolean isGoodsTypeSatisfy = isGoodsTypeSatisfy(settlement);
 
         // 商品类型不满足，直接返回商品总价，并清空优惠券
