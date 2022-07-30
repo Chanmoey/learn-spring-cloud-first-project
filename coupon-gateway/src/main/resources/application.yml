@@ -18,6 +18,11 @@ zuul:
       path: /coupon-template/**
       service-id: eureka-client-coupon-template
       strip-prefix: false # 是否跳过前缀
+    # 结算微服务路由配置
+    settlement:
+      path: /coupon-settlement/**
+      service-id: eureka-client-coupon-settlement
+      strip-prefix: false
   host:
     connect-timeout-millis: 15000
     socket-timeout-millis: 60000
